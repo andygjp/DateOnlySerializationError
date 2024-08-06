@@ -1,0 +1,13 @@
+@DateOnlySerializationError_HostAddress = http://localhost:5153
+
+### get
+GET {{DateOnlySerializationError_HostAddress}}/orders
+
+### create
+POST {{DateOnlySerializationError_HostAddress}}/orders
+Content-Type: application/json
+
+{
+  "Id": 100,
+  "Created": "2024-12-24"
+}
