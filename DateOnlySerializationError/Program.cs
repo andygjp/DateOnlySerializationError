@@ -31,8 +31,12 @@ public class OrdersController : ODataController
         return [new Order { Id = 1, Created = DateOnly.FromDateTime(DateTime.Now) }];
     }
 
-    public Order Post([FromBody] Order newOrder)
+    public ActionResult<Order> Post([FromBody] Order newOrder)
     {
+        if (ModelState.IsValid is false)
+        {
+            return BadRequest(ModelState);
+        }
         return newOrder;
     }
 }
