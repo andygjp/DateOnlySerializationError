@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData;
+using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
 using Microsoft.OData.ModelBuilder;
 
@@ -26,6 +27,7 @@ public class Order
 
 public class OrdersController : ODataController
 {
+    [EnableQuery]
     public IEnumerable<Order> Get()
     {
         return [new Order { Id = 1, Created = DateOnly.FromDateTime(DateTime.Now) }];

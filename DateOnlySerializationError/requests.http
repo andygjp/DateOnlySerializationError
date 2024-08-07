@@ -3,6 +3,9 @@
 ### get
 GET {{DateOnlySerializationError_HostAddress}}/orders
 
+### query
+GET {{DateOnlySerializationError_HostAddress}}/orders?$select=Created
+
 ### create
 POST {{DateOnlySerializationError_HostAddress}}/orders
 Content-Type: application/json
